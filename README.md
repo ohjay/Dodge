@@ -1,7 +1,7 @@
 Dodge [v1.0.1]
 ========================================================================
 
-A downloadable Kirby-based evasion game. Written in Java, this game was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before its finished version, Dodge was released as a standalone demo.
+A downloadable Kirby-based evasion game. This is written in Java and was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before the release of its finished version, TripleT's developers made the executive decision to release Dodge as a standalone demo.
 
 
 ## Table of Contents
@@ -48,9 +48,9 @@ This game is controlled entirely by the keyboard; menu navigation is primarily t
 Instructions for customizing controls:
 
 1. Start the program.
-2. On the main menu, select the "controls" option and hit ENTER.
-3. You will be taken to the controls menu. The control that is highlighted is the one for which you are currently changing. Hit the key that you want to be associated with that control. (ex. if "LEFT" is highlighted and you want to move left with the left arrow key, press the left arrow key.)
-4. The box on the right will reflect the change and the next control will now be highlighted. In the same fashion, press the key that should be associated with that control.
+2. On the main menu, select the "**controls**" option and hit ENTER.
+3. You will be taken to the controls menu. The highlighted control is the one that you're currently customizing. Hit the key that you'd prefer to be associated with that control (ex. if "LEFT" is highlighted and you want to move left with the left arrow key, then press the left arrow key).
+4. The box on the right will reflect the change, and the game will highlight the next control in the list. In the same fashion as before, press the key that should be associated with that control.
 5. Continue in this way until you have chosen a key for every control. Then hit any button to return to the main menu.
 6. If you make a mistake, you will have to repeat the selection process for all six controls (in other words, starting from #2 on these instructions).
 
