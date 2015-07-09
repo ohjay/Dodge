@@ -1,7 +1,7 @@
-Dodge
+Dodge [v1.0.0]
 ========================================================================
 
-A downloadable Kirby-based evasion game written in Java. This game was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before its finished version, Dodge was released as a standalone demo.
+A downloadable Kirby-based evasion game. Written in Java, this game was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before its finished version, Dodge was released as a standalone demo.
 
 
 ## Table of Contents
@@ -58,7 +58,7 @@ Instructions for customizing controls:
 Features
 ------------------------------------------------------------------------
 
-The current version of the game includes customizable controls and a high score element, both of which are automatically saved. This program also features original music ([Adrift](https://www.youtube.com/watch?v=S2pJcRMe1H0)) composed by Randi Shi, aka Balderdact.
+The current version of the game includes customizable controls and a high score element, both of which are automatically saved. This program also features original music ([Adrift](https://www.youtube.com/watch?v=S2pJcRMe1H0)) composed by Randy Shi, aka Balderdact.
 
 
 License
