@@ -85,14 +85,14 @@ public class Dodge extends JApplet {
      * Plays the game's music track (Adrift by Balderdact).
      */
     private static void startMusic() {
-		try {
-			Clip clip = AudioSystem.getClip();
-	        AudioInputStream adriftStream 
+        try {
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream adriftStream 
                     = AudioSystem.getAudioInputStream(Dodge.class.getResource(ADRIFT_FILEPATH));
-	        clip.open(adriftStream);
-	        clip.loop(Clip.LOOP_CONTINUOUSLY); 
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+            clip.open(adriftStream);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
