@@ -80,6 +80,7 @@ public class ControlMenuPanel extends MenuPanel {
                     break;
                 default:
                     deactivate();
+                    Dodge.savePersistentInfo(GameState.pInfo);
                     GameState.layout.show(GameState.contentPanel, "mainMenu");
                     GameState.mainMenuPanel.activate();
                     break;
