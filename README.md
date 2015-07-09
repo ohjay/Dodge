@@ -4,6 +4,16 @@ Dodge
 A downloadable Kirby-based evasion game written in Java. This game was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before its finished version, Dodge was released as a standalone demo.
 
 
+## Table of Contents
+
+* [Download](#Download)
+* [Gameplay](#Gameplay)
+* [Controls](#Controls)
+* [Features](#Features)
+* [License](#License)
+* [Contributors](#Contributors)
+
+
 Download
 ------------------------------------------------------------------------
 
@@ -13,9 +23,9 @@ You can download Dodge as an executable JAR file by clicking [here](https://gith
 Gameplay
 ------------------------------------------------------------------------
 
-The rules of the game are simple: dodge ghosts (formally known as [Tedhauns](http://kirby.wikia.com/wiki/Tedhaun)) and collect as many treasure chests as you can before the ghosts/Tedhauns overwhelm you! However, the more treasure you collect, the more ghosts you will attract. Therefore, as the game progresses you will find it harder and harder to survive. 
+The rules of the game are simple: **dodge ghosts** (formally known as [Tedhauns](http://kirby.wikia.com/wiki/Tedhaun)) and **collect as many treasure chests as you can** before the ghosts/Tedhauns overwhelm you! However, the more treasure you collect, the more ghosts you will attract. Therefore, as the game progresses you will find it harder and harder to survive. 
 
-However, you do have one thing on your side: power-ups. With the press of a button, you can transform into Star Kirby, who emits the white-hot passion of a thousand burning suns! The passion is too much for the ghosts: if Star Kirby comes into contact with them, they will vanish and go off to haunt someone else. Nevertheless, stars do not last forever... and since Kirby is a much smaller (and brighter) star than most, his supply of hydrogen fuel will run out especially quickly. When this happens, Kirby will revert to his normal form. And life will continue.
+However, you do have one thing on your side: **power-ups**. With the press of a button, you can transform into **Star Kirby**, who emits the white-hot passion of a thousand burning suns! The passion is too much for the ghosts: if Star Kirby comes into contact with them, they will vanish and go off to haunt someone else. Nevertheless, stars do not last forever... and since Kirby is a much smaller (and brighter) star than most, his supply of hydrogen fuel will run out especially quickly. When this happens, Kirby will revert to his normal form and life will continue.
 
 Here's a visual of Dodge gameplay:
 ![alt text](https://cloud.githubusercontent.com/assets/8358648/8349811/e195fe4a-1ad4-11e5-96a4-b59483a6410e.png "Dodge gameplay")
@@ -54,7 +64,7 @@ The current version of the game includes customizable controls and a high score 
 License
 ------------------------------------------------------------------------
 
-This game is distrubted under the terms of the [MIT License](https://github.com/ohjay/Dodge/blob/master/LICENSE.txt).
+This game is distributed under the terms of the [MIT License](https://github.com/ohjay/Dodge/blob/master/LICENSE.txt).
 
 
 Contributors
