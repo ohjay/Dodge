@@ -1,4 +1,4 @@
-Dodge [v1.0.0]
+Dodge [v1.0.1]
 ========================================================================
 
 A downloadable Kirby-based evasion game. Written in Java, this game was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before its finished version, Dodge was released as a standalone demo.
