@@ -1,7 +1,7 @@
 Dodge [v1.0.1]
 ========================================================================
 
-A downloadable Kirby-based evasion game. This is written in Java and was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the long development process that awaits TripleT before the release of its finished version, TripleT's developers made the executive decision to release Dodge as a standalone demo.
+A downloadable Kirby-based evasion game. This is written in Java and was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the lengthy development process that awaits TripleT before the release of a finished version, TripleT's developers made the executive decision to release Dodge as a standalone demo.
 
 
 ## Table of Contents
@@ -25,7 +25,7 @@ Gameplay
 
 The rules of the game are simple: **dodge ghosts** (formally known as [Tedhauns](http://kirby.wikia.com/wiki/Tedhaun)) and **collect as many treasure chests as you can** before the ghosts/Tedhauns overwhelm you! However, the more treasure you collect, the more ghosts you will attract. Therefore, as the game progresses you will find it harder and harder to survive. 
 
-However, you do have one thing on your side: **power-ups**. With the press of a button, you can transform into **Star Kirby**, who emits the white-hot passion of a thousand burning suns! The passion is too much for the ghosts: if Star Kirby comes into contact with them, they will vanish and go off to haunt someone else. Nevertheless, stars do not last forever... and since Kirby is a much smaller (and brighter) star than most, his supply of hydrogen fuel will run out especially quickly. When this happens, Kirby will revert to his normal form and life will continue.
+However, you do have one thing on your side: **power-ups**. With the press of a button, you can transform into **Star Kirby**, who emits the white-hot passion of a thousand burning suns! This passion is too much for the ghosts: if Star Kirby comes into contact with them, they will vanish and go off to haunt another poor soul. Nevertheless, stars do not last forever... and since Kirby is a much smaller (and brighter) star than most, his supply of hydrogen fuel will run out especially quickly. When this happens, Kirby will revert to his normal form and life will continue.
 
 Here's a visual of Dodge gameplay:
 ![alt text](https://cloud.githubusercontent.com/assets/8358648/8349811/e195fe4a-1ad4-11e5-96a4-b59483a6410e.png "Dodge gameplay")
@@ -49,8 +49,8 @@ Instructions for customizing controls:
 
 1. Start the program.
 2. On the main menu, select the "**controls**" option and hit ENTER.
-3. You will be taken to the controls menu. The highlighted control is the one that you're currently customizing. Hit the key that you'd prefer to be associated with that control (ex. if "LEFT" is highlighted and you want to move left with the left arrow key, then press the left arrow key).
-4. The box on the right will reflect the change, and the game will highlight the next control in the list. In the same fashion as before, press the key that should be associated with that control.
+3. You will be taken to the controls menu. The highlighted control is the one that you're currently customizing; hit the key that you'd prefer to be associated with that control (ex. if "LEFT" is highlighted and you want to move left with the left arrow key, then press the left arrow key).
+4. The box on the right will reflect your change, and the game will highlight the next control in the list. In the same fashion as before, press the key that should be associated with this control.
 5. Continue in this way until you have chosen a key for every control. Then hit any button to return to the main menu.
 6. If you make a mistake, you will have to repeat the selection process for all six controls (in other words, starting from #2 on these instructions).
 
