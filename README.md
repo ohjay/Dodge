@@ -6,12 +6,12 @@ A downloadable Kirby-based evasion game. This is written in Java and was origina
 
 ## Table of Contents
 
-* [Download](#Download)
-* [Gameplay](#Gameplay)
-* [Controls](#Controls)
-* [Features](#Features)
-* [License](#License)
-* [Contributors](#Contributors)
+* [Download](#download)
+* [Gameplay](#gameplay)
+* [Controls](#controls)
+* [Features](#features)
+* [License](#license)
+* [Contributors](#contributors)
 
 
 Download
