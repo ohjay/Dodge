@@ -14,6 +14,7 @@ import java.awt.Image;
  * @author Owen Jow
  */
 public class ControlMenuPanel extends MenuPanel {
+    // Mac OS x-coordinate: 376  |  Windows x-coordinate: 300
     private static final int X_COORD = 376, LEFT_Y = 143, RIGHT_Y = 183, UP_Y = 221, 
             DOWN_Y = 257, POWERUP_Y = 295, PAUSE_Y = 335;
     private boolean controlSelected;

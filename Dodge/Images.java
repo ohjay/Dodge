@@ -49,6 +49,7 @@ public class Images {
                 new ImageIcon(Images.class.getResource("/images/mmClose.png")).getImage());
         images.put("mmPlay",
                 new ImageIcon(Images.class.getResource("/images/mmPlay.png")).getImage());
+        // MAC OS IMAGES
         images.put("controlLeft",
                 new ImageIcon(Images.class.getResource("/images/controlsLeft.png")).getImage());
         images.put("controlRight",
@@ -61,6 +62,20 @@ public class Images {
                 new ImageIcon(Images.class.getResource("/images/controlsPowerup.png")).getImage());
         images.put("controlPause",
                 new ImageIcon(Images.class.getResource("/images/controlsPause.png")).getImage());
+            
+        // WINDOWS IMAGES
+        // images.put("controlLeft",
+        //         new ImageIcon(Images.class.getResource("/images/controlsLeft-windows.png")).getImage());
+        // images.put("controlRight",
+        //         new ImageIcon(Images.class.getResource("/images/controlsRight-windows.png")).getImage());
+        // images.put("controlUp",
+        //         new ImageIcon(Images.class.getResource("/images/controlsUp-windows.png")).getImage());
+        // images.put("controlDown",
+        //         new ImageIcon(Images.class.getResource("/images/controlsDown-windows.png")).getImage());
+        // images.put("controlPowerup",
+        //         new ImageIcon(Images.class.getResource("/images/controlsPowerup-windows.png")).getImage());
+        // images.put("controlPause",
+        //         new ImageIcon(Images.class.getResource("/images/controlsPause-windows.png")).getImage());
     }
     
     /**

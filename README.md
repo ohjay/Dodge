@@ -1,4 +1,4 @@
-Dodge [v1.0.1]
+Dodge [v1.1.0]
 ========================================================================
 
 A downloadable Kirby-based evasion game. This is written in Java and was originally part of [TripleT](https://github.com/ohjay/TripleTGame). However, due to the lengthy development process that awaits TripleT before the release of a finished version, TripleT's developers made the executive decision to release Dodge as a standalone demo.
@@ -17,9 +17,12 @@ A downloadable Kirby-based evasion game. This is written in Java and was origina
 Download
 ------------------------------------------------------------------------
 
-**Note: you may need to adjust your security settings to play this game. On a Mac, this can be done from the General tab in System Preferences > Security & Privacy.**
+**Note: you may need to adjust your security settings to play this game. On OS X, this can be done from the General tab in System Preferences > Security & Privacy.**
 
-You can download Dodge as an executable JAR file by clicking [here](https://github.com/ohjay/Dodge/blob/master/Dodge.jar?raw=true). The file is 42.3 MB. Once the download is complete, the game can be run simply by double-clicking on Dodge.jar in the filesystem.
+You can download Dodge as an executable JAR file by clicking one of the download links below. Once the download is complete, the game can be run simply by double-clicking on Dodge.jar in the filesystem.
+
+- [OS X download](https://github.com/ohjay/Dodge/blob/master/download/Dodge-OSX-1.1.jar?raw=true) [42.3 MB]
+- [Windows download](https://github.com/ohjay/Dodge/blob/master/download/Dodge-windows-1.1.jar?raw=true) [43.1 MB]
 
 
 Gameplay
@@ -50,11 +53,10 @@ This game is controlled entirely by the keyboard; menu navigation is tied primar
 Instructions for customizing controls:
 
 1. Start the program.
-2. On the main menu, select the "controls" option and hit ENTER.
-3. You will be taken to the controls menu. The highlighted control is the one that you're currently customizing; hit the key that you'd prefer to be associated with that control (ex. if "LEFT" is highlighted and you want to move left with the left arrow key, then press the left arrow key).
-4. The box on the right will reflect your change, and the game will highlight the next control in the list. In the same fashion as before, press the key that should be associated with this control.
-5. Continue in this way until you have chosen a key for every control. Then hit any button to return to the main menu.
-6. If you make a mistake, you will have to repeat the selection process for all six controls (in other words, starting from #2 on these instructions).
+2. On the main menu, select the "controls" option and hit your pause/select button (if that doesn't work, hit ENTER).
+3. You will be taken to the controls menu. Use the up and down controls to switch between options; when you arrive at the control that you want to customize, press whichever key is currently mapped to pause/select (or, alternatively, ENTER). The key to the right should turn into a set of ellipses ("...").
+4. Hit the key that you'd prefer to be associated with that control (ex. if "LEFT" is highlighted and you want to move left with the left arrow key, then press the left arrow key). The box on the right should reflect your change. (**Note: this game does not allow duplicate controls. If you select a key that is currently mapped to another action, then you will be forced to choose a new key for that other control.**)
+5. Continue in this way until you are satisfied with your control setup. Then hit ESC to return to the main menu.
 
 
 Features
