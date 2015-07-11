@@ -19,8 +19,8 @@ public class MainMenuPanel extends MenuPanel {
      */
     public MainMenuPanel() {
         // Initialize images
-        menuImages = new Image[] { Images.get("mmControls"), Images.get("mmCredits"),
-                 Images.get("mmClose"), Images.get("mmPlay") };
+        menuImages = new Image[] { Images.get("mmPlay"), Images.get("mmControls"), 
+                Images.get("mmCredits"), Images.get("mmClose") };
         this.kl = new KeyListener();
         isTitleScr = true;
     }
@@ -50,36 +50,36 @@ public class MainMenuPanel extends MenuPanel {
             if (isTitleScr) { 
                 isTitleScr = false; // transition out of the title screen
             } else if (keyCode == GameState.pInfo.leftKey || keyCode == GameState.pInfo.rightKey) {
-                imgIndex = (imgIndex == 3) ? 0 : 3;
+                imgIndex = (imgIndex == 0) ? 1 : 0;
             } else if (keyCode == GameState.pInfo.downKey) {
-                if (imgIndex < 2) { 
+                if (imgIndex > 0 && imgIndex < 3) { 
                     imgIndex++; // highlight the option below the current option
-                } else if (imgIndex == 2) {
-                    imgIndex = 0; // wrap around to the top
+                } else if (imgIndex == 3) {
+                    imgIndex = 1; // wrap around to the top
                 }
             } else if (keyCode == GameState.pInfo.upKey) {
-                if (imgIndex > 0 && imgIndex < 3) { 
+                if (imgIndex > 1) { 
                     imgIndex--; // highlight the option above the current option
-                } else if (imgIndex == 0) {
-                    imgIndex = 2; // wrap around to the bottom
+                } else if (imgIndex == 1) {
+                    imgIndex = 3; // wrap around to the bottom
                 }
             } else if (keyCode == GameState.pInfo.pauselectKey || keyCode == KeyEvent.VK_ENTER) {
                 deactivate();
                 switch (imgIndex) {
-                    case 3: 
+                    case 0: 
                         GameState.layout.show(GameState.contentPanel, "dodgePreG");
                         GameState.dodgePreGPanel.activate();
                         break;
-                    case 2:
-                        System.exit(0); // quit the program and close the window
                     case 1:
+                        GameState.layout.show(GameState.contentPanel, "controlMenu");
+                        GameState.controlMPanel.activate();
+                        break;
+                    case 2:
                         GameState.layout.show(GameState.contentPanel, "credits");
                         GameState.creditsPanel.activate();
                         break;
                     default:
-                        GameState.layout.show(GameState.contentPanel, "controlMenu");
-                        GameState.controlMPanel.activate();
-                        break;
+                        System.exit(0); // quit the program and close the window
                 }
             }
             

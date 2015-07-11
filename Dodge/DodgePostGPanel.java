@@ -54,7 +54,7 @@ public class DodgePostGPanel extends MenuPanel {
         requestFocus();
         
         if (scoreCounter < score) {
-            if (score <= 5000 || scoreCounter > score - 15) scoreCounter += 1;
+            if (score <= 2500 || scoreCounter > score - 15) scoreCounter += 1;
             else if (score > 25000) scoreCounter += 15;
             else if (score > 10000) scoreCounter += 10;
             else scoreCounter += 5;

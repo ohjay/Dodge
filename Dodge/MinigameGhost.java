@@ -14,7 +14,7 @@ public class MinigameGhost {
     protected double xPos, yPos;
     private int dx, dy;
     protected boolean isFacingRight;
-    private static final double DIAGONAL_DIVISOR = 1 / Math.sqrt(2);
+    private static final double SQRT_2_APPROX = Math.sqrt(2);
     // Note: off = offset
     private static final int SIDE_LEN = 27, R_HORIZ_OFF = 11, L_HORIZ_OFF = 8, VERT_OFF = 10;
     static final int RIGHT_BORDER = DodgePanel.HORIZ_RIGHT_BORDER - SIDE_LEN - 3, 
@@ -144,8 +144,8 @@ public class MinigameGhost {
             yPos += dy;
         } else {
             // Turn diagonal delta movement into 1 instead of sqrt(2)
-            xPos += DIAGONAL_DIVISOR * dx;
-            yPos += DIAGONAL_DIVISOR * dy;
+            xPos += dx;// / SQRT_2_APPROX;
+            yPos += dy;// / SQRT_2_APPROX;
         }
     }
     

@@ -58,8 +58,8 @@ public class ControlMenuPanel extends MenuPanel {
         }
         
         // Second layer of keys
-        g.setColor(Color.WHITE);
         for (int i = 0; i < keys.length; i++) {
+            g2.setColor((i == imgIndex) ? Color.WHITE : Color.GRAY);
             if (controlSelected && i == imgIndex) {
                 g2.drawString("...", X_COORD, Y_VALUES[i]);
             } else {
@@ -99,13 +99,13 @@ public class ControlMenuPanel extends MenuPanel {
             
             // Check if the user pressed ESC and therefore wants to return to the main menu
             if (keyCode == KeyEvent.VK_ESCAPE) {
-                if (!controlSelected) { // don't save if the possibility of duplicates remains
+                // Don't let the user escape if the possibility of duplicates remains
+                if (!controlSelected) {
+                    deactivate();
                     Dodge.savePersistentInfo(GameState.pInfo);
+                    GameState.layout.show(GameState.contentPanel, "mainMenu");
+                    GameState.mainMenuPanel.activate();
                 }
-                
-                deactivate();
-                GameState.layout.show(GameState.contentPanel, "mainMenu");
-                GameState.mainMenuPanel.activate();
             } else if (controlSelected) {
                 // We know a control is selected... but which one?
                 switch (imgIndex) { // ^cue switch logic

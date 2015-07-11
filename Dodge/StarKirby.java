@@ -21,7 +21,7 @@ public class StarKirby {
             REPEL_DIST = 55;
     private static final int RIGHT_BORDER = DodgePanel.HORIZ_RIGHT_BORDER - WIDTH,
             LOWER_BORDER = DodgePanel.VERT_LOWER_BORDER - HEIGHT;
-    private static final double SQRT_2_APPROX = 1.5;
+    private static final double SQRT_2_APPROX = Math.sqrt(2);
     
     /**
      * Returns the graphical representation of Kirby's present condition.
@@ -167,10 +167,10 @@ public class StarKirby {
             }
         } else {
             // Prevent diagonal movement from being overpowered
-            if (withinHorizRange(xPos + ((double) dx) / SQRT_2_APPROX)) 
-                xPos += ((double) dx) / SQRT_2_APPROX; 
-            if (withinVerticalRange(yPos + ((double) dy) / SQRT_2_APPROX)) 
-                yPos += ((double) dy) / SQRT_2_APPROX;
+            if (withinHorizRange(xPos + dx / SQRT_2_APPROX))
+                xPos += dx / SQRT_2_APPROX; 
+            if (withinVerticalRange(yPos + dy / SQRT_2_APPROX))
+                yPos += dy / SQRT_2_APPROX;
         }
     }
     
