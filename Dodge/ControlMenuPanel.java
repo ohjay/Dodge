@@ -17,10 +17,10 @@ public class ControlMenuPanel extends MenuPanel {
     private static final int X_COORD = 376, LEFT_Y = 143, RIGHT_Y = 183, UP_Y = 221, 
             DOWN_Y = 257, POWERUP_Y = 295, PAUSE_Y = 335;
     private boolean controlSelected;
-    // Default control options
-    static final int LEFT_DEFAULT = KeyEvent.VK_LEFT, RIGHT_DEFAULT = KeyEvent.VK_RIGHT,
-            UP_DEFAULT = KeyEvent.VK_UP, DOWN_DEFAULT = KeyEvent.VK_DOWN, 
-            POWERUP_DEFAULT = KeyEvent.VK_A, PAUSELECT_DEFAULT = KeyEvent.VK_SHIFT;
+    private int[] keys;
+    // The y-values for the different control keys, in the order they appear
+    private static final int[] Y_VALUES = new int[] { LEFT_Y, RIGHT_Y, UP_Y, DOWN_Y, 
+            POWERUP_Y, PAUSE_Y };
     
     /** 
      * Constructs a control menu panel. 
@@ -32,6 +32,10 @@ public class ControlMenuPanel extends MenuPanel {
                  Images.get("controlUp"), Images.get("controlDown"), Images.get("controlPowerup"),
                  Images.get("controlPause") };
         this.kl = new KeyListener();
+        // Initialize the keys array with the current controls
+        keys = new int[] { GameState.pInfo.leftKey, GameState.pInfo.rightKey,
+                GameState.pInfo.upKey, GameState.pInfo.downKey, GameState.pInfo.powerupKey,
+                GameState.pInfo.pauselectKey };
     }
     
     @Override
@@ -42,20 +46,46 @@ public class ControlMenuPanel extends MenuPanel {
         // Now we have to display the actual keys that the controls are mapped to
         // We'll draw these keys as strings:
         g.setFont(new Font("Verdana", Font.BOLD, 15));
+        
+        // Draw the first layer of keys (we'll have two layers so it has that nice 3D effect)
         g.setColor(Color.BLACK);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.leftKey), X_COORD, LEFT_Y);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.rightKey), X_COORD, RIGHT_Y);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.upKey), X_COORD, UP_Y);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.downKey), X_COORD, DOWN_Y);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.powerupKey), X_COORD, POWERUP_Y);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.pauselectKey), X_COORD, PAUSE_Y);
+        for (int i = 0; i < keys.length; i++) {
+            if (controlSelected && i == imgIndex) {
+                g2.drawString("...", X_COORD, Y_VALUES[i]);
+            } else {
+                g2.drawString(KeyEvent.getKeyText(keys[i]), X_COORD, Y_VALUES[i]);
+            }
+        }
+        
+        // Second layer of keys
         g.setColor(Color.WHITE);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.leftKey), X_COORD - 1, LEFT_Y - 1);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.rightKey), X_COORD - 1, RIGHT_Y - 1);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.upKey), X_COORD - 1, UP_Y - 1);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.downKey), X_COORD - 1, DOWN_Y - 1);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.powerupKey), X_COORD - 1, POWERUP_Y - 1);
-        g2.drawString(KeyEvent.getKeyText(GameState.pInfo.pauselectKey), X_COORD - 1, PAUSE_Y - 1);
+        for (int i = 0; i < keys.length; i++) {
+            if (controlSelected && i == imgIndex) {
+                g2.drawString("...", X_COORD, Y_VALUES[i]);
+            } else {
+                g2.drawString(KeyEvent.getKeyText(keys[i]), X_COORD - 1, Y_VALUES[i] - 1);
+            }
+        }
+    }
+    
+    /**
+     * Checks if the key specified by KEY_CODE is the same as any other control (or, to be precise,
+     * any control that's not the one associated with KEY_INDEX). If so, we will select 
+     * the offending duplicate (by altering the imgIndex variable) 
+     * and thereby force the user to bind a new key for that control.
+     * @param keyCode the key that we'll be checking for duplicates against
+     * @param keyIndex the index of the control that we don't need to check against
+     * @return true if the specified key has a duplicate
+     */
+    private boolean runUniquenessCheck(int keyCode, int keyIndex) {
+        for (int i = 0; i < keys.length; i++) {
+            if (i != keyIndex && keyCode == keys[i]) {
+                imgIndex = i;
+                return true;
+            }
+        }
+        
+        return false;
     }
     
     public class KeyListener extends KeyAdapter {
@@ -69,107 +99,40 @@ public class ControlMenuPanel extends MenuPanel {
             
             // Check if the user pressed ESC and therefore wants to return to the main menu
             if (keyCode == KeyEvent.VK_ESCAPE) {
+                if (!controlSelected) { // don't save if the possibility of duplicates remains
+                    Dodge.savePersistentInfo(GameState.pInfo);
+                }
+                
                 deactivate();
-                Dodge.savePersistentInfo(GameState.pInfo);
                 GameState.layout.show(GameState.contentPanel, "mainMenu");
                 GameState.mainMenuPanel.activate();
             } else if (controlSelected) {
-                switch (imgIndex) {
+                // We know a control is selected... but which one?
+                switch (imgIndex) { // ^cue switch logic
                     case 0:
                         GameState.pInfo.leftKey = keyCode;
-                        // Make sure it's not the same as any of the other keys
-                        // ...and if it is, restore that other key to its default
-                        if (keyCode == GameState.pInfo.rightKey) {
-                            GameState.pInfo.rightKey = RIGHT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.upKey) {
-                            GameState.pInfo.upKey = UP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.downKey) {
-                            GameState.pInfo.downKey = DOWN_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.powerupKey) {
-                            GameState.pInfo.powerupKey = POWERUP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.pauselectKey) {
-                            GameState.pInfo.pauselectKey = PAUSELECT_DEFAULT;
-                        }
-                        
                         break;
                     case 1:
                         GameState.pInfo.rightKey = keyCode;
-                        if (keyCode == GameState.pInfo.leftKey) {
-                            GameState.pInfo.leftKey = LEFT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.upKey) {
-                            GameState.pInfo.upKey = UP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.downKey) {
-                            GameState.pInfo.downKey = DOWN_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.powerupKey) {
-                            GameState.pInfo.powerupKey = POWERUP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.pauselectKey) {
-                            GameState.pInfo.pauselectKey = PAUSELECT_DEFAULT;
-                        }
-                        
                         break;
                     case 2:
                         GameState.pInfo.upKey = keyCode;
-                        if (keyCode == GameState.pInfo.leftKey) {
-                            GameState.pInfo.leftKey = LEFT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.rightKey) {
-                            GameState.pInfo.rightKey = RIGHT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.downKey) {
-                            GameState.pInfo.downKey = DOWN_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.powerupKey) {
-                            GameState.pInfo.powerupKey = POWERUP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.pauselectKey) {
-                            GameState.pInfo.pauselectKey = PAUSELECT_DEFAULT;
-                        }
-                        
                         break;
                     case 3:
                         GameState.pInfo.downKey = keyCode;
-                        if (keyCode == GameState.pInfo.leftKey) {
-                            GameState.pInfo.leftKey = LEFT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.rightKey) {
-                            GameState.pInfo.rightKey = RIGHT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.upKey) {
-                            GameState.pInfo.upKey = UP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.powerupKey) {
-                            GameState.pInfo.powerupKey = POWERUP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.pauselectKey) {
-                            GameState.pInfo.pauselectKey = PAUSELECT_DEFAULT;
-                        }
-                        
                         break;
                     case 4:
                         GameState.pInfo.powerupKey = keyCode;
-                        if (keyCode == GameState.pInfo.leftKey) {
-                            GameState.pInfo.leftKey = LEFT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.rightKey) {
-                            GameState.pInfo.rightKey = RIGHT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.upKey) {
-                            GameState.pInfo.upKey = UP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.downKey) {
-                            GameState.pInfo.downKey = DOWN_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.pauselectKey) {
-                            GameState.pInfo.pauselectKey = PAUSELECT_DEFAULT;
-                        }
-                        
                         break;
                     case 5:
                         GameState.pInfo.pauselectKey = keyCode;
-                        if (keyCode == GameState.pInfo.leftKey) {
-                            GameState.pInfo.leftKey = LEFT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.rightKey) {
-                            GameState.pInfo.rightKey = RIGHT_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.upKey) {
-                            GameState.pInfo.upKey = UP_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.downKey) {
-                            GameState.pInfo.downKey = DOWN_DEFAULT;
-                        } else if (keyCode == GameState.pInfo.powerupKey) {
-                            GameState.pInfo.powerupKey = POWERUP_DEFAULT;
-                        }
-                        
                         break;
                 }
                 
-                controlSelected = false;
+                keys[imgIndex] = keyCode;
+                if (!runUniquenessCheck(keyCode, imgIndex)) {
+                    controlSelected = false; // no duplicates, so nothing is selected now
+                }
             } else if (keyCode == GameState.pInfo.upKey) {
                 if (imgIndex > 0) { 
                     imgIndex--;
