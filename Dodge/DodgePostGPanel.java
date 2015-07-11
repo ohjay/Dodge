@@ -120,7 +120,7 @@ public class DodgePostGPanel extends MenuPanel {
             
             if (keyCode == GameState.pInfo.upKey || keyCode == GameState.pInfo.downKey) {
                 imgIndex = (imgIndex % 2 == 0) ? imgIndex - 1 : imgIndex + 1;
-            } else if (keyCode == KeyEvent.VK_ENTER) {
+            } else if (keyCode == GameState.pInfo.pauselectKey || keyCode == KeyEvent.VK_ENTER) {
                 deactivate();
                 if (imgIndex % 2 == 0) {
                     GameState.layout.show(GameState.contentPanel, "mainMenu");

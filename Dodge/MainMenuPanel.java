@@ -49,21 +49,21 @@ public class MainMenuPanel extends MenuPanel {
             
             if (isTitleScr) { 
                 isTitleScr = false; // transition out of the title screen
-            } else if (keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT) {
+            } else if (keyCode == GameState.pInfo.leftKey || keyCode == GameState.pInfo.rightKey) {
                 imgIndex = (imgIndex == 3) ? 0 : 3;
-            } else if (keyCode == KeyEvent.VK_DOWN) {
+            } else if (keyCode == GameState.pInfo.downKey) {
                 if (imgIndex < 2) { 
                     imgIndex++; // highlight the option below the current option
                 } else if (imgIndex == 2) {
                     imgIndex = 0; // wrap around to the top
                 }
-            } else if (keyCode == KeyEvent.VK_UP) {
+            } else if (keyCode == GameState.pInfo.upKey) {
                 if (imgIndex > 0 && imgIndex < 3) { 
                     imgIndex--; // highlight the option above the current option
                 } else if (imgIndex == 0) {
                     imgIndex = 2; // wrap around to the bottom
                 }
-            } else if (keyCode == KeyEvent.VK_ENTER) {
+            } else if (keyCode == GameState.pInfo.pauselectKey || keyCode == KeyEvent.VK_ENTER) {
                 deactivate();
                 switch (imgIndex) {
                     case 3: 

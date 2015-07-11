@@ -14,7 +14,7 @@ public class PersistentInfo implements Serializable {
     int dodgeHighScore; // the game's high score
     
     // Control options
-    int leftKey, rightKey, upKey, downKey, powerupKey, pauseKey;
+    int leftKey, rightKey, upKey, downKey, powerupKey, pauselectKey;
     
     /**
      * Constructor for a persistent info object.
@@ -22,11 +22,11 @@ public class PersistentInfo implements Serializable {
      * Sets all of the controls to their default options.
      */
     public PersistentInfo() {
-        leftKey = KeyEvent.VK_LEFT;
-        rightKey = KeyEvent.VK_RIGHT;
-        upKey = KeyEvent.VK_UP;
-        downKey = KeyEvent.VK_DOWN;
-        powerupKey = KeyEvent.VK_A;
-        pauseKey = KeyEvent.VK_SHIFT;
+        leftKey = ControlMenuPanel.LEFT_DEFAULT;
+        rightKey = ControlMenuPanel.RIGHT_DEFAULT;
+        upKey = ControlMenuPanel.UP_DEFAULT;
+        downKey = ControlMenuPanel.DOWN_DEFAULT;
+        powerupKey = ControlMenuPanel.POWERUP_DEFAULT;
+        pauselectKey = ControlMenuPanel.PAUSELECT_DEFAULT;
     }
 }

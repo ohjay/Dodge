@@ -33,7 +33,7 @@ public class DodgePausePanel extends MenuPanel {
             
             if (keyCode == GameState.pInfo.upKey || keyCode == GameState.pInfo.downKey) {
                 imgIndex = 1 - imgIndex;
-            } else if (keyCode == KeyEvent.VK_ENTER) {
+            } else if (keyCode == GameState.pInfo.pauselectKey || keyCode == KeyEvent.VK_ENTER) {
                 deactivate();
                 if (imgIndex == 0) {
                     GameState.layout.show(GameState.contentPanel, "dodge");
@@ -42,10 +42,6 @@ public class DodgePausePanel extends MenuPanel {
                     GameState.layout.show(GameState.contentPanel, "mainMenu");
                     GameState.mainMenuPanel.activate();
                 }
-            } else if (keyCode == GameState.pInfo.pauseKey) {
-                deactivate();
-                GameState.layout.show(GameState.contentPanel, "dodge");
-                GameState.dodgePanel.activate();
             }
             
             repaint();
