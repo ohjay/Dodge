@@ -21,8 +21,8 @@ Download
 
 You can download Dodge as an executable JAR file by clicking one of the download links below. Once the download is complete, the game can be run simply by double-clicking on Dodge.jar in the filesystem.
 
-- [OS X download](https://github.com/ohjay/Dodge/blob/master/download/Dodge-OSX-1.1.jar?raw=true) [42.3 MB]
-- [Windows download](https://github.com/ohjay/Dodge/blob/master/download/Dodge-windows-1.1.jar?raw=true) [43.1 MB]
+- [OS X download](https://github.com/ohjay/Dodge/blob/master/dist/Dodge-OSX-1.1.jar?raw=true) [42.3 MB]
+- [Windows download](https://github.com/ohjay/Dodge/blob/master/dist/Dodge-windows-1.1.jar?raw=true) [43.1 MB]
 
 
 Gameplay
