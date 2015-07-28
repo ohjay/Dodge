@@ -191,9 +191,10 @@ public class Images {
     
     /**
      * Initializes images for the credits menu.
-     * - credits: the credits screen background
+     * - creditsBackground: the credits screen background
      * - owenjow: the credits entry for Owen Jow
      * - williamjow: the credits entry for William Jow
+     * - randyshi: the credits entry for Randy Shi
      */
     private static void initializeCreditsImages() {
         images.put("creditsBackground",
