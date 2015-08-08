@@ -110,7 +110,7 @@ public class DodgePostGPanel extends MenuPanel {
     }
     
     /**
-     * The KeyListener for the main menu.
+     * The KeyListener for the post-game panel.
      * Controls registered: UP, DOWN, LEFT, RIGHT, and ENTER.
      */
     public class KeyListener extends KeyAdapter {

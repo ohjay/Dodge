@@ -30,7 +30,7 @@ Gameplay
 
 The rules of the game are simple: **dodge ghosts** (formally known as [Tedhauns](http://kirby.wikia.com/wiki/Tedhaun)) and **collect as many treasure chests as you can** before the ghosts/Tedhauns overwhelm you! However, the more treasure you collect, the more ghosts you will attract. Therefore, as the game progresses you will find it harder and harder to survive. 
 
-However, you do have one thing on your side: **power-ups**. With the press of a button, you can transform into **Star Kirby**, who emits the white-hot passion of a thousand burning suns! This passion is too much for the ghosts: if Star Kirby comes into contact with them, they will vanish and go off to haunt another poor soul. Nevertheless, stars do not last forever... and since Kirby is a much smaller (and brighter) star than most, his supply of hydrogen fuel will run out especially quickly. When this happens, Kirby will revert to his normal form and life will continue.
+However, you do have one thing on your side: **power-ups**. With the press of a button, you can transform into **Star Kirby**, who emits the white-hot passion of a thousand burning suns! This passion is too much for the ghosts: if Star Kirby comes into contact with them, they will vanish and go off to haunt some other poor soul. Nevertheless, stars do not last forever... and since Kirby is a much smaller (and brighter) star than most, his supply of hydrogen fuel will run out especially quickly. When this happens, Kirby will revert to his normal form and life will continue.
 
 Here's a visual of Dodge gameplay:
 ![alt text](https://cloud.githubusercontent.com/assets/8358648/8349811/e195fe4a-1ad4-11e5-96a4-b59483a6410e.png "Dodge gameplay")
